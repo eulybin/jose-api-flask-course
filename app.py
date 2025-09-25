@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.get("/store")
 def get_stores():
-    return jsonify(stores)
+    return jsonify(stores), 200
 
 
 @app.post("/store/<string:store_name>")

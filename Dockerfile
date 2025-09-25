@@ -6,7 +6,8 @@ COPY Pipfile Pipfile.lock /app/
 RUN pipenv install --deploy --ignore-pipfile
 COPY . .
 EXPOSE 5005
-CMD ["pipenv", "run", "flask", "run", "--host", "0.0.0.0"]
+CMD ["pipenv", "run", "python", "app.py"]
+
 
 
 
