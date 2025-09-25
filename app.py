@@ -10,14 +10,6 @@ def get_stores():
     return jsonify(stores)
 
 
-# @app.post("/store")
-# def add_store():
-#     data = request.get_json()
-#     new_store = {"store_name": data["store_name"], "items": data["items"]}
-#     stores.append(new_store)
-#     return jsonify(data), 201
-
-
 @app.post("/store/<string:store_name>")
 def add_store(store_name):
     data = request.get_json()
@@ -27,3 +19,7 @@ def add_store(store_name):
             store["items"].append(new_item)
             return new_item, 201
     return {"message": "No such store found."}, 404
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
