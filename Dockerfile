@@ -5,7 +5,7 @@ RUN pip install --upgrade pip pipenv
 COPY Pipfile Pipfile.lock /app/
 RUN pipenv install --deploy --ignore-pipfile
 COPY . .
-EXPOSE 5000
+EXPOSE 5005
 CMD ["pipenv", "run", "flask", "run", "--host", "0.0.0.0"]
 
 
